@@ -9,7 +9,7 @@ configFiles=( .xinitrc
 .config/cava/config
 .config/tilda/config_cava
 .config/xfce4/terminal/terminalrc
-.config/xfce4/whiskermenu-1.rc
+.config/xfce4/panel/whiskermenu-1.rc
 .config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
 .config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml
 .config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml
