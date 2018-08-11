@@ -35,8 +35,9 @@ IFS=""
 for f in ${configFiles[*]}
 do
     printf "Working on: %s\n" $f
-    cp --parents "$f" "/git/ArchDotFiles/"
+    # cp --parents "$f" "/git/ArchDotFiles/"
     ln -sf "/git/ArchDotFiles/$f" "$HOME/$f"
 done
 
 # Move RunCava.sh to usr/bin directory
+sudo ln -sf "/git/ArchDotFiles/RunCava.sh" "/usr/bin/RunCava.sh"
