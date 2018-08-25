@@ -101,7 +101,7 @@ ${alignc}No Network Interface Attached
 $endif$endif\
 
 ${if_up enp1s0}\
-${color #95B9B4}Down: $color${downspeed enp1s0} k/s ${alignr}${color #95B9B4}Up:$color ${upspeed enp1s0} k/s
+${color #95B9B4}Down: $color${downspeed enp1s0} ${alignr}${color #95B9B4}Up:$color ${upspeed enp1s0}
 ${downspeedgraph enp1s0 30,120 000000 95B9B4} ${alignr}${upspeedgraph enp1s0 30,120 000000 95B9B4}$color
 ${color #95B9B4}Total:$color ${totaldown enp1s0} ${alignr}${color #95B9B4}Total:$color ${totalup enp1s0}
 ${else}\
