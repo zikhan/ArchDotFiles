@@ -5,7 +5,6 @@ configFiles=( .xinitrc
 .xscreensaver
 .zprofile
 .zshrc
-.zshrc.pre
 .config/cava/config
 .config/tilda/config_cava
 .config/xfce4/terminal/terminalrc
@@ -36,8 +35,8 @@ for f in ${configFiles[*]}
 do
     printf "Working on: %s\n" $f
     # cp --parents "$f" "/git/ArchDotFiles/"
-    ln -sf "/git/ArchDotFiles/$f" "$HOME/$f"
+    ln -sf "/home/zovin/git/ArchDotFiles/$f" "$HOME/$f"
 done
 
 # Move RunCava.sh to usr/bin directory
-sudo ln -sf "/git/ArchDotFiles/RunCava.sh" "/usr/bin/RunCava.sh"
+sudo ln -sf "/home/zovin/git/ArchDotFiles/RunCava.sh" "/usr/bin/RunCava.sh"
