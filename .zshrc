@@ -4,11 +4,34 @@
 # Path to your oh-my-zsh installation.
   export ZSH="/home/zovin/.oh-my-zsh"
 
+POWERLINE9K_MODE="nerdfont-complete"
+
+POWERLEVEL9K_LINUX_ARCH_ICON="\uf303"
+POWERLEVEL9K_BACKGROUND_JOBS_ICON="\uf53e"
+POWERLEVEL9K_BATTERY_ICON="\uf578"
+POWERLEVEL9K_BATTERY_CHARGED_ICON="\uf1e6"
+POWERLEVEL9K_BATTERY_CHARGING_ICON="\uf583"
+POWERLEVEL9K_ETC_ICON="\uf992"
+POWERLEVEL9K_FOLDER_ICON="\uf74a"
+POWERLEVEL9K_HOME_ICON="\uf7db"
+POWERLEVEL9K_HOME_SUB_ICON="\ue5fe"
+POWERLEVEL9K_JAVA_ICON="\ue738"
+POWERLEVEL9K_KUBERNETES_ICON=""
+POWERLEVEL9K_NETWORK_ICON=""
+POWERLEVEL9K_NODE_ICON=""
+POWERLEVEL9K_VCS_COMMIT_ICON="\ue729"
+POWERLEVEL9K_VCS_BOOKMARK_ICON="\uf02e"
+POWERLEVEL9K_VCS_GIT_ICON="\ue702"
+POWERLEVEL9K_VCS_STAGED_ICON="\ufc1c"
+POWERLEVEL9K_VCS_STASH_ICON="\ue5fb"
+POWERLEVEL9K_SUDO_ICON="\uf0e7"
+POWERLEVEL9K_LOCK_ICON="\uf023"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -101,3 +124,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir_writable dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs battery)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_STATUS_VERBOSE=true
+POWERLEVEL9K_BATTERY_STAGES=($'\uf579' $'\uf57a' $'\uf57b' $'\uf57c' $'\uf57d' $'\uf57e' $'\uf57f' $'\uf580' $'\uf581' $'\uf578')
