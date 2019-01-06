@@ -14,7 +14,7 @@ if_up_strictness link
 text_buffer_size 2048
 #imlib_cache_size 0
 
-temperature_unit fahrenheit
+temperature_unit celcius
 
 # Window specifications #
 own_window yes
@@ -44,8 +44,6 @@ xftfont xos4 Terminus:size=8
 xftalpha 0.5
 
 uppercase no
-
-temperature_unit fahrenheit
 
 default_color d8dee8
 
@@ -77,10 +75,11 @@ TEXT
 #					           CPU usage 
 #----------------------------------------------------------------------------------------------------------------------------------------
 ${color #95B9B4}${hr 1}$color
-${color #95B9B4}${voffset 6}Temp: $color ${acpitemp}°F
+${color #95B9B4}${voffset 6}Temp: $color ${hwmon 1 temp 1}°C
 ${color #95B9B4}${voffset 6}Processes:$color $processes	
 ${color #95B9B4}${voffset 6}Running: $color  $running_processes
-${voffset 6}${goto 50}${cpu cpu0}% ${color 95B9B4}${goto 50}${voffset 13}CPU1$color${goto 100}${voffset -12}${cpu cpu1}% ${color 95B9B4}${goto 100}${voffset 12}CPU2$color${goto 150}${voffset -12}${cpu cpu2}% ${color 95B9B4}${goto 150}${voffset 12}CPU3$color${goto 200}${voffset -12}${cpu cpu3}% ${color 95B9B4}${goto 200}${voffset 12}CPU4$color
+${voffset 6}${goto 35}${cpu cpu0}% ${color 95B9B4}${goto 35}${voffset 13}CPU1$color${goto 70}${voffset -12}${cpu cpu1}% ${color 95B9B4}${goto 70}${voffset 12}CPU2$color${goto 105}${voffset -12}${cpu cpu2}% ${color 95B9B4}${goto 105}${voffset 12}CPU3$color${goto 140}${voffset -12}${cpu cpu3}% ${color 95B9B4}${goto 140}${voffset 12}CPU4$color${goto 175}${voffset -12}${cpu cpu4}% ${color 95B9B4}${goto 175}${voffset 12}CPU5$color${goto 210}${voffset -12}${cpu cpu5}% ${color 95B9B4}${goto 210}${voffset 12}CPU6$color
+${voffset 6}${goto 35}${cpu cpu6}% ${color 95B9B4}${goto 35}${voffset 13}CPU7$color${goto 70}${voffset -12}${cpu cpu7}% ${color 95B9B4}${goto 70}${voffset 12}CPU8$color${goto 105}${voffset -12}${cpu cpu8}% ${color 95B9B4}${goto 105}${voffset 12}CPU9$color${goto 140}${voffset -12}${cpu cpu9}% ${color 95B9B4}${goto 140}${voffset 12}CPU10$color${goto 175}${voffset -12}${cpu cpu10}% ${color 95B9B4}${goto 175}${voffset 12}CPU11$color${goto 210}${voffset -12}${cpu cpu11}% ${color 95B9B4}${goto 210}${voffset 12}CPU12$color
 ${color #95B9B4}${voffset 6}FREQ:$color ${freq}MHz
 ${color #95B9B4}${voffset 6}Load:$color ${loadavg}
 #----------------------------------------------------------------------------------------------------------------------------------------
