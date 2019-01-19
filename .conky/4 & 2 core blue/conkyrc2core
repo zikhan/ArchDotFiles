@@ -14,7 +14,7 @@ if_up_strictness link
 text_buffer_size 2048
 #imlib_cache_size 0
 
-temperature_unit celcius
+temperature_unit celsius
 
 # Window specifications #
 own_window yes
