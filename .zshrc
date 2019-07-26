@@ -10,7 +10,7 @@ else
 	# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 	# Path to your oh-my-zsh installation.
-	  export ZSH="/home/zovin/.oh-my-zsh"
+	export ZSH="/home/zovin/.oh-my-zsh"
 
 	POWERLINE9K_MODE="nerdfont-complete"
 
@@ -119,7 +119,7 @@ else
 	# fi
 
 	# Compilation flags
-	 export ARCHFLAGS="-arch x86_64"
+	export ARCHFLAGS="-arch x86_64"
 
 	# ssh
 	# export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -132,6 +132,9 @@ else
 	# Example aliases
 	# alias zshconfig="mate ~/.zshrc"
 	# alias ohmyzsh="mate ~/.oh-my-zsh"
+	
+	# Make ctrl+bksp slash-backward-kill-word like Windows
+	bindkey '' slash-backward-kill-word
 
 	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir_writable dir vcs)
 	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs battery)
