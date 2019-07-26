@@ -136,6 +136,7 @@ else
 	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir_writable dir vcs)
 	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs battery)
 	POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+	POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 	POWERLEVEL9K_STATUS_VERBOSE=true
 	POWERLEVEL9K_BATTERY_STAGES=($'\uf579' $'\uf57a' $'\uf57b' $'\uf57c' $'\uf57d' $'\uf57e' $'\uf57f' $'\uf580' $'\uf581' $'\uf578')
 fi

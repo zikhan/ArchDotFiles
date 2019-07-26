@@ -44,4 +44,6 @@ TabActivityColor=#dc322f
 ColorBoldUseDefault=FALSE
 ColorBoldIsBright=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=TRUE
 

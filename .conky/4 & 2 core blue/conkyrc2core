@@ -89,12 +89,12 @@ ${color 95B9B4}${voffset 2}${hr 1}
 ${color 95B9B4}${voffset 5}Hostname: $color$alignr$nodename
 ${if_up enp1s0}${color 95B9B4}enp1s0: $color$alignr${addr enp1s0}
 ${color 95B9B4}Current: $color${alignr}${execi 10 /sbin/ethtool enp1s0|grep Speed|awk '{print $2}'|cut -d"M" -f1} Mbits/sec
-${if_up wlp2s0}${color 95B9B4}${alignc}wlp2s0 is also connected.
+${if_up wlp10s0}${color 95B9B4}${alignc}wlp10s0 is also connected.
 ${else}\
 $endif\
 ${else}\
-${if_up wlp2s0}${color 95B9B4}wlp2s0: $color$alignr${addr wlp2s0}
-${color 95B9B4}Current: $color${alignr}${execi 10 /sbin/iwconfig wlp2s0|grep Rate|cut -d"M" -f1|cut -b20-24} Mbits/sec
+${if_up wlp10s0}${color 95B9B4}wlp10s0: $color$alignr${addr wlp10s0}
+${color 95B9B4}Current: $color${alignr}${execi 10 /sbin/iwconfig wlp10s0|grep Rate|cut -d"M" -f1|cut -b20-24} Mbits/sec
 ${else}\
 ${alignc}No Network Interface Attached
 $endif$endif\
@@ -104,10 +104,10 @@ ${color #95B9B4}Down: $color${downspeed enp1s0} ${alignr}${color #95B9B4}Up:$col
 ${downspeedgraph enp1s0 30,120 000000 95B9B4} ${alignr}${upspeedgraph enp1s0 30,120 000000 95B9B4}$color
 ${color #95B9B4}Total:$color ${totaldown enp1s0} ${alignr}${color #95B9B4}Total:$color ${totalup enp1s0}
 ${else}\
-${if_up wlp2s0}\
-${color #95B9B4}Down: $color${downspeed wlp2s0}${alignr}${color #95B9B4}Up:$color ${upspeed wlp2s0}
-${downspeedgraph wlp2s0 30,120 000000 95B9B4} ${alignr}${upspeedgraph wlp2s0 30,120 000000 95B9B4}$color
-${color #95B9B4}Total:$color ${totaldown wlp2s0} ${alignr}${color #95B9B4}Total:$color ${totalup wlp2s0}
+${if_up wlp10s0}\
+${color #95B9B4}Down: $color${downspeed wlp10s0}${alignr}${color #95B9B4}Up:$color ${upspeed wlp10s0}
+${downspeedgraph wlp10s0 30,120 000000 95B9B4} ${alignr}${upspeedgraph wlp10s0 30,120 000000 95B9B4}$color
+${color #95B9B4}Total:$color ${totaldown wlp10s0} ${alignr}${color #95B9B4}Total:$color ${totalup wlp10s0}
 $endif$endif\
 #----------------------------------------------------------------------------------------------------------------------------------------
 #					DISK/RAM/SWAP usage
