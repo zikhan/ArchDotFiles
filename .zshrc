@@ -100,6 +100,9 @@ else
 	  git-extras
 	  sudo
 	  vscode
+	  pass
+	  docker
+          docker-compose
 	)
 
 	source $ZSH/oh-my-zsh.sh
@@ -132,6 +135,9 @@ else
 	# Example aliases
 	# alias zshconfig="mate ~/.zshrc"
 	# alias ohmyzsh="mate ~/.oh-my-zsh"
+	if [[ (-x /bin/podman) || (-x /usr/bin/podman) ]]; then
+		alias docker=podman
+	fi
 	
 	# Make ctrl+bksp slash-backward-kill-word like Windows
 	bindkey '' slash-backward-kill-word
