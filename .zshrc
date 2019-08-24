@@ -99,7 +99,6 @@ else
 	  common-aliases
 	  git-extras
 	  sudo
-	  vscode
 	  pass
 	  docker
           docker-compose
@@ -139,6 +138,11 @@ else
 		alias docker='sudo podman'
 	fi
 	
+	# Configure NVM Stuff
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 	# Make ctrl+bksp slash-backward-kill-word like Windows
 	bindkey '' slash-backward-kill-word
 
