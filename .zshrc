@@ -136,7 +136,7 @@ else
 	# alias zshconfig="mate ~/.zshrc"
 	# alias ohmyzsh="mate ~/.oh-my-zsh"
 	if [[ (-x /bin/podman) || (-x /usr/bin/podman) ]]; then
-		alias docker=podman
+		alias docker='sudo podman'
 	fi
 	
 	# Make ctrl+bksp slash-backward-kill-word like Windows
