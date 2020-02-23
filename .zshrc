@@ -143,6 +143,9 @@ else
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+	# Configure Dotnet tools to path
+	export PATH="$PATH:/home/zovin/.dotnet/tools"
+
 	# Make ctrl+bksp slash-backward-kill-word like Windows
 	bindkey '' slash-backward-kill-word
 
