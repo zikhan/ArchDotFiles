@@ -134,9 +134,6 @@ else
 	# Example aliases
 	# alias zshconfig="mate ~/.zshrc"
 	# alias ohmyzsh="mate ~/.oh-my-zsh"
-	if [[ (-x /bin/podman) || (-x /usr/bin/podman) ]]; then
-		alias docker='sudo podman'
-	fi
 	
 	# Configure NVM Stuff
 	export NVM_DIR="$HOME/.nvm"
