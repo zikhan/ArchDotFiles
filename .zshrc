@@ -101,7 +101,8 @@ else
 	  sudo
 	  pass
 	  docker
-          docker-compose
+	  docker-compose
+	  dotnet
 	)
 
 	source $ZSH/oh-my-zsh.sh
