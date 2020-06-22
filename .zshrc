@@ -109,6 +109,7 @@ else
 	  docker
 	  docker-compose
 	  dotnet
+	  cargo
 	)
 
 	source $ZSH/oh-my-zsh.sh
@@ -149,6 +150,9 @@ else
 
 	# Configure Dotnet tools to path
 	export PATH="$PATH:/home/zovin/.dotnet/tools"
+
+	# Configure cargo path
+	export PATH="$HOME/.cargo/bin:$PATH"
 
 	# Make ctrl+bksp slash-backward-kill-word like Windows
 	bindkey '' slash-backward-kill-word
