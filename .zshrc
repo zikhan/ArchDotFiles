@@ -18,9 +18,10 @@ else
 		git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 	fi
 
-	POWERLINE9K_MODE="nerdfont-complete"
+	POWERLEVEL9K_MODE="nerdfont-complete"
 
-	POWERLEVEL9K_LINUX_ARCH_ICON="\uf303"
+	POWERLEVEL9K_OS_ICON_FOREGROUND=036
+	#POWERLEVEL9K_LINUX_ARCH_ICON="\uf303"
 	POWERLEVEL9K_BACKGROUND_JOBS_ICON="\uf53e"
 	POWERLEVEL9K_BATTERY_ICON="\uf578"
 	POWERLEVEL9K_BATTERY_CHARGED_ICON="\uf1e6"
