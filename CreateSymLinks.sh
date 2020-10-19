@@ -4,7 +4,6 @@ configFiles=(
 	.xinitrc
 	.Xmodmap
 	.xscreensaver
-	.zprofile
 	.zshrc
 	.config/cava/config
 	.config/tilda/config_cava
@@ -36,6 +35,9 @@ IFS=""
 for f in ${configFiles[*]}
 do
     printf "Working on: %s\n" $f
+	if ! [ -d "$(dirname $HOME/$f)" ]; then
+		mkdir -p "$(dirname $HOME/$f)"
+	fi
     ln -sf "$PWD/$f" "$HOME/$f"
 done
 
