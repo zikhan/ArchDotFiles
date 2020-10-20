@@ -20,7 +20,7 @@ else
 
 	POWERLEVEL9K_MODE="nerdfont-complete"
 
-	POWERLEVEL9K_OS_ICON_FOREGROUND=036
+	POWERLEVEL9K_OS_ICON_FOREGROUND=032
 	#POWERLEVEL9K_LINUX_ARCH_ICON="\uf303"
 	POWERLEVEL9K_BACKGROUND_JOBS_ICON="\uf53e"
 	POWERLEVEL9K_BATTERY_ICON="\uf578"
@@ -156,7 +156,7 @@ else
 	export PATH="$HOME/.cargo/bin:$PATH"
 
 	# Make ctrl+bksp slash-backward-kill-word like Windows
-	bindkey '' slash-backward-kill-word
+	bindkey '' backward-kill-word
 
 	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir_writable dir vcs)
 	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs battery)
