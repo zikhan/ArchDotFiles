@@ -1,124 +1,127 @@
-# Conky settings #
-background no
-update_interval 1
+conky.config = {
+-- Conky settings #
+	background = false,
+	update_interval = 1,
 
-cpu_avg_samples 2
-net_avg_samples 2
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
 
-override_utf8_locale yes
+	override_utf8_locale = true,
 
-double_buffer yes
-no_buffers yes
-if_up_strictness link
+	double_buffer = true,
+	no_buffers = true,
+	if_up_strictness = 'link',
 
-text_buffer_size 2048
-#imlib_cache_size 0
+	text_buffer_size = 2048,
+--imlib_cache_size 0
 
-temperature_unit celsius
+	temperature_unit = 'celsius',
 
-# Window specifications #
-own_window yes
-own_window_type normal
-own_window_transparent yes
-own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
+-- Window specifications #
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
 
-border_inner_margin 0
-border_outer_margin 5
+	border_inner_margin = 0,
+	border_outer_margin = 5,
 
-minimum_size 250 300
-maximum_width 250
+	minimum_width = 250, minimum_height = 300,
+	maximum_width = 350,
 
-alignment top_right
-gap_x 0
-gap_y 0
+	alignment = 'top_right',
+	gap_x = 0,
+	gap_y = 0,
 
-# Graphics settings #
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders yes
+-- Graphics settings #
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
 
-# Text settings #
-use_xft yes
-xftfont Liberation Sans:size=8
-xftalpha 0.5
+-- Text settings #
+	use_xft = true,
+	font = 'Liberation Sans:size=8',
+	xftalpha = 0.5,
 
-uppercase no
+	uppercase = false,
 
-default_color d8dee8
+	default_color = '#d8dee8',--'#3498db', 
 
-own_window_argb_value 0
-own_window_argb_visual yes
+	own_window_argb_value = 0,
+	own_window_argb_visual = true,
 
-TEXT
+};
+
+conky.text = [[
 #----------------------------------------------------------------------------------------------------------------------------------------
 #					         Time and date 
 #----------------------------------------------------------------------------------------------------------------------------------------
-#${voffset 7}${font Radio Space:size=16}${color 95B9B4}${time %A}${font}$color${font Radio Space:size=38}${goto 167}${voffset -8} ${time %e}${font}
-#${font Radio Space:size=18}${voffset -30}${time %b}${font}${voffset -3} ${font Radio Space:size=20}${time %Y}${font}${color 95B9B4} ${hr 1}
+#${voffset 7}${font Radio Space:size=16}${color 3498db}${time %A}${font}$color${font Radio Space:size=38}${goto 167}${voffset -8} ${time %e}${font}
+#${font Radio Space:size=18}${voffset -30}${time %b}${font}${voffset -3} ${font Radio Space:size=20}${time %Y}${font}${color 3498db} ${hr 1}
 #----------------------------------------------------------------------------------------------------------------------------------------
 #					         Battery Circle 
 #----------------------------------------------------------------------------------------------------------------------------------------
 #${color d8dee8}${goto 209}${voffset 34}${battery_percent}%
-#${color 95B9B4}${goto 202}${voffset 25}Battery
+#${color 3498db}${goto 202}${voffset 25}Battery
 #----------------------------------------------------------------------------------------------------------------------------------------
 #						Weather 
 #----------------------------------------------------------------------------------------------------------------------------------------
-#${font conkyweather:size=35}${color d8dee8}${goto 200}${voffset 20}${execpi 6000  sed -n '2p' ~/.conky/accu_weather/rss/weather}$color${font}${font Radio Space:size=11}${color 95B9B4}${goto 202}${voffset 12}HOME
+#${font conkyweather:size=35}${color d8dee8}${goto 200}${voffset 20}${execpi 6000  sed -n '2p' ~/.conky/accu_weather/rss/weather}$color${font}${font Radio Space:size=11}${color 3498db}${goto 202}${voffset 12}HOME
 #${execi 600 bash ~/.conky/accu_weather/rss/acc_rss}${font Radio Space:size=15}${goto 201}${voffset -4}${execpi 600 sed -n '1p' ~/.conky/accu_weather/rss/weather|awk '{print $NF}'}${font}$color
 #${font caviar dreams:size=8}${goto 47}${voffset 5}Uptime: ${uptime_short}
 #----------------------------------------------------------------------------------------------------------------------------------------
 #					           CPU usage 
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color #95B9B4}${hr 1}$color
-${color #95B9B4}${voffset 6}Temp: $color ${hwmon 1 temp 1}°C
-${color #95B9B4}${voffset 6}Processes:$color $processes	
-${color #95B9B4}${voffset 6}Running: $color  $running_processes
-${voffset 6}${goto 21}${cpu cpu0}% ${color 95B9B4}${goto 21}${voffset 13}CPU1$color${goto 56}${voffset -12}${cpu cpu1}% ${color 95B9B4}${goto 56}${voffset 12}CPU2$color${goto 91}${voffset -12}${cpu cpu2}% ${color 95B9B4}${goto 91}${voffset 12}CPU3$color${goto 126}${voffset -12}${cpu cpu3}% ${color 95B9B4}${goto 126}${voffset 12}CPU4$color${goto 168}${voffset -12}${cpu cpu4}% ${color 95B9B4}${goto 168}${voffset 12}CPU5$color${goto 210}${voffset -12}${cpu cpu5}% ${color 95B9B4}${goto 210}${voffset 12}CPU6$color
-${voffset 6}${goto 21}${cpu cpu6}% ${color 95B9B4}${goto 21}${voffset 13}CPU7$color${goto 56}${voffset -12}${cpu cpu7}% ${color 95B9B4}${goto 56}${voffset 12}CPU8$color${goto 91}${voffset -12}${cpu cpu8}% ${color 95B9B4}${goto 91}${voffset 12}CPU9$color${goto 126}${voffset -12}${cpu cpu9}% ${color 95B9B4}${goto 126}${voffset 12}CPU10$color${goto 168}${voffset -12}${cpu cpu10}% ${color 95B9B4}${goto 168}${voffset 12}CPU11$color${goto 210}${voffset -12}${cpu cpu11}% ${color 95B9B4}${goto 210}${voffset 12}CPU12$color
-${color #95B9B4}${voffset 6}FREQ:$color ${freq}MHz
+${color #3498db}${hr 1}$color
+${color #3498db}${voffset 6}Temp: $color ${hwmon 1 temp 1}°C
+${color #3498db}${voffset 6}Processes:$color $processes	
+${color #3498db}${voffset 6}Running: $color  $running_processes
+${voffset 6}${goto 21}${cpu cpu0}% ${color 3498db}${goto 21}${voffset 13}CPU1$color${goto 56}${voffset -12}${cpu cpu1}% ${color 3498db}${goto 56}${voffset 12}CPU2$color${goto 91}${voffset -12}${cpu cpu2}% ${color 3498db}${goto 91}${voffset 12}CPU3$color${goto 126}${voffset -12}${cpu cpu3}% ${color 3498db}${goto 126}${voffset 12}CPU4$color${goto 168}${voffset -12}${cpu cpu4}% ${color 3498db}${goto 168}${voffset 12}CPU5$color${goto 210}${voffset -12}${cpu cpu5}% ${color 3498db}${goto 210}${voffset 12}CPU6$color
+${voffset 6}${goto 21}${cpu cpu6}% ${color 3498db}${goto 21}${voffset 13}CPU7$color${goto 56}${voffset -12}${cpu cpu7}% ${color 3498db}${goto 56}${voffset 12}CPU8$color${goto 91}${voffset -12}${cpu cpu8}% ${color 3498db}${goto 91}${voffset 12}CPU9$color${goto 126}${voffset -12}${cpu cpu9}% ${color 3498db}${goto 126}${voffset 12}CPU10$color${goto 168}${voffset -12}${cpu cpu10}% ${color 3498db}${goto 168}${voffset 12}CPU11$color${goto 210}${voffset -12}${cpu cpu11}% ${color 3498db}${goto 210}${voffset 12}CPU12$color
+${color #3498db}${voffset 6}FREQ:$color ${freq}MHz
 #----------------------------------------------------------------------------------------------------------------------------------------
 #						Network
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color 95B9B4}${voffset 2}${hr 1}
-${color 95B9B4}${voffset 5}Hostname: $color$alignr$nodename
-${if_up enp1s0}${color 95B9B4}enp1s0: $color$alignr${addr enp1s0}
-${color 95B9B4}Current: $color${alignr}${execi 10 /sbin/ethtool enp1s0|grep Speed|awk '{print $2}'|cut -d"M" -f1} Mbits/sec
-${if_up wlp10s0}${color 95B9B4}${alignc}wlp10s0 is also connected.
+${color 3498db}${voffset 2}${hr 1}
+${color 3498db}${voffset 5}Hostname: $color$alignr$nodename
+${if_up eno2}${color 3498db}en02: $color$alignr${addr eno2}
+${color 3498db}Current: $color${alignr}${execi 10 /sbin/ethtool eno2|grep Speed|awk '{print $2}'|cut -d"M" -f1} Mbits/sec
+${if_up wlo1}${color 3498db}${alignc}wl01 is also connected.
 ${else}\
 $endif\
 ${else}\
-${if_up wlp10s0}${color 95B9B4}wlp10s0: $color$alignr${addr wlp10s0}
-${color 95B9B4}Current: $color${alignr}${execi 10 /sbin/iwconfig wlp10s0|grep Rate|cut -d"M" -f1|cut -b20-24} Mbits/sec
+${if_up wlo1}${color 3498db}wlo1: $color$alignr${addr wlo1}
+${color 3498db}Current: $color${alignr}${execi 10 /sbin/iwconfig wlo1|grep Rate|cut -d"M" -f1|cut -b20-24} Mbits/sec
 ${else}\
 ${alignc}No Network Interface Attached
 $endif$endif\
 
-${if_up enp1s0}\
-${color #95B9B4}Down: $color${downspeed enp1s0} ${alignr}${color #95B9B4}Up:$color ${upspeed enp1s0}
-${downspeedgraph enp1s0 30,120 000000 95B9B4} ${alignr}${upspeedgraph enp1s0 30,120 000000 95B9B4}$color
-${color #95B9B4}Total:$color ${totaldown enp1s0} ${alignr}${color #95B9B4}Total:$color ${totalup enp1s0}
+${if_up eno2}\
+${color #3498db}Down: $color${downspeed eno2} ${alignr}${color #3498db}Up:$color ${upspeed eno2}
+${downspeedgraph eno2 30,120 000000 3498db} ${alignr}${upspeedgraph eno2 30,120 000000 3498db}$color
+${color #3498db}Total:$color ${totaldown eno2} ${alignr}${color #3498db}Total:$color ${totalup eno2}
 ${else}\
-${if_up wlp10s0}\
-${color #95B9B4}Down: $color${downspeed wlp10s0}${alignr}${color #95B9B4}Up:$color ${upspeed wlp10s0}
-${downspeedgraph wlp10s0 30,120 000000 95B9B4} ${alignr}${upspeedgraph wlp10s0 30,120 000000 95B9B4}$color
-${color #95B9B4}Total:$color ${totaldown wlp10s0} ${alignr}${color #95B9B4}Total:$color ${totalup wlp10s0}
+${if_up wlo2}\
+${color #3498db}Down: $color${downspeed wlo2}${alignr}${color #3498db}Up:$color ${upspeed wlo2}
+${downspeedgraph wlo2 30,120 000000 3498db} ${alignr}${upspeedgraph wlo2 30,120 000000 3498db}$color
+${color #3498db}Total:$color ${totaldown wlo2} ${alignr}${color #3498db}Total:$color ${totalup wlo2}
 $endif$endif\
 #----------------------------------------------------------------------------------------------------------------------------------------
 #					DISK/RAM/SWAP usage
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color 95B9B4}${voffset 2}${hr 1}
+${color 3498db}${voffset 2}${hr 1}
 ${color d8dee8}${goto 50}${voffset 5}${fs_used_perc /}%
-${color 95B9B4}${goto 50}DISK
+${color 3498db}${goto 50}DISK
 ${color d8dee8}${goto 125}${voffset -24}${memperc}%
-${color 95B9B4}${goto 125}RAM
+${color 3498db}${goto 125}RAM
 ${color d8dee8}${goto 200}${voffset -24}${swapperc}%
-${color 95B9B4}${goto 200}SWAP
+${color 3498db}${goto 200}SWAP
 #----------------------------------------------------------------------------------------------------------------------------------------
 #					   Running processes
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color 95B9B4}${voffset 2}${hr 1}
-${color #95B9B4}${voffset 5}NAME${goto 130}PID${goto 175}CPU%${alignr}MEM%$color${voffset 5}
+${color 3498db}${voffset 2}${hr 1}
+${color #3498db}${voffset 5}NAME${goto 130}PID${goto 175}CPU%${alignr}MEM%$color${voffset 5}
 ${top name 1}${goto 123}${top pid 1}${goto 170}${top cpu 1}${alignr}${top mem 1}
 ${top name 2}${goto 123}${top pid 2}${goto 170}${top cpu 2}${alignr}${top mem 2}
 ${top name 3}${goto 123}${top pid 3}${goto 170}${top cpu 3}${alignr}${top mem 3}
@@ -129,14 +132,15 @@ ${top name 8}${goto 123}${top pid 8}${goto 170}${top cpu 8}${alignr}${top mem 8}
 #----------------------------------------------------------------------------------------------------------------------------------------
 #					     Computer info
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color 95B9B4}${voffset 2}${hr 1}${voffset 5}
-#${color 95B9B4}Hostname:$color${alignr}${nodename}
-${color 95B9B4}OS:$color${alignr}Arch Linux $machine
-${color 95B9B4}Kernel:$color${alignr}${kernel}$color
+${color 3498db}${voffset 2}${hr 1}${voffset 5}
+#${color 3498db}Hostname:$color${alignr}${nodename}
+${color 3498db}OS:$color${alignr}Arch Linux $machine
+${color 3498db}Kernel:$color${alignr}${kernel}$color
 #----------------------------------------------------------------------------------------------------------------------------------------
 #						Logging
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color 95B9B4}${voffset 2}${hr 1}$color
-${color 95B9B4}${alignc}SYSLOG:$color
-${color 95B9B4}${voffset -5}${hr 1}$color
+${color 3498db}${voffset 2}${hr 1}$color
+${color 3498db}${alignc}SYSLOG:$color
+${color 3498db}${voffset -5}${hr 1}$color
 ${voffset 5}${execi 10 journalctl --system -n5 --no-pager | cut -d\  -f5- | awk '{print " ",$0, "\n---------------------------------"}' | fold -s -w50}
+]];
